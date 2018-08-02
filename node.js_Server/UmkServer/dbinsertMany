@@ -1,0 +1,17 @@
+exports.insertmongo=function(par1){
+rts.insertmongo=function(par1){
+    var Client = require('mongodb').MongoClient;
+
+    Client.connect('mongodb://localhost:27017/mongodb_tut', function(error, db){
+        if(error) {
+            console.log(error);
+        } else {
+
+        var newlogin={name: par1}
+            const db1 = db.db('mongodb_tut');
+            db1.collection('example').insert(newlogin);
+            db.close();
+	}
+});
+}
+}
